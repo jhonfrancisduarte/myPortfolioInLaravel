@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Jhon Francis Duarte</title>
+        <title>About Me</title>
 
         <!-- Fonts -->
         <link rel="icon" type="image/png" href="{{ asset('images/logo2.png') }}">
