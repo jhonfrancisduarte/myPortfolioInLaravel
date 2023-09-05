@@ -11,28 +11,23 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <!-- Include Bootstrap CSS (place this in your HTML's head section) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
 
-        <!-- Styles -->
-        <style>
-            
-        </style>
     </head>
-    <body class="antialiased">
+<body class="antialiased">
 
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            <div class="label">
-                <p>This is my website made with <a href="https://laravel.com/" target="_blank"c><strong>Laravel</strong></a></p>
-            </div>
 
             <div class="nav">
                 <!-- Logo -->
                 <div class="logo">
                     <a href="/"><img src="{{ asset('images/logo2.png') }}" alt="logo" width="100"></a>
                 </div>
-                <div>
+                <!-- Navigation Menu -->
+                <div class="menu">
                     <ul class="navbar">
-                        <li class="navitem"><a href="/">Home</a></li>
+                        <li class="navitem" id="active"><a href="/">Home</a></li>
                         <li class="navitem"><a href="/about">About</a></li>
                         <li class="navitem"><a href="/works">Works</a></li>
                         <li class="navitem"><a href="/contact">Contact</a></li>
@@ -40,9 +35,33 @@
                 </div>
             </div>
 
-            <div>
-                
+            <!-- Burger Menu Icon -->
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </div>
+
+            <!-- Burger Menu (Initially hidden) -->
+            <div class="burger-menu">
+                <ul class="burger-menu-navbar">
+                    <li class="navitem" id="active"><a href="/">Home</a></li>
+                    <li class="navitem"><a href="/about">About</a></li>
+                    <li class="navitem"><a href="/works">Works</a></li>
+                    <li class="navitem"><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="hero">
+                <div class="greetings col-lg">
+                    <h2>Hi</h2>
+                    <h1>I'm Jhon Francis A. Duarte</h1>
+                </div>
+            </div>
+
         </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

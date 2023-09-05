@@ -14,6 +14,8 @@ use App\Http\Controllers\Main;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,3 +29,5 @@ Route::view("contact", 'contact');
 
 // How to get controller: Route::get("path", "controller file");
 Route::get("users", [Main::class, 'index']);
+
+

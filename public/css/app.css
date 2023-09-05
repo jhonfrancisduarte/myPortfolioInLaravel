@@ -1,7 +1,14 @@
+body {
+    overflow-x: hidden;
+}
+
 .nav {
-    display: flex;
-    overflow: hidden;
+    display: inline-block;
     position: fixed; top: 0;
+}
+
+#active a{
+    color: #44fce3 !important;
 }
 
 .nav .logo{
@@ -36,7 +43,7 @@
 /* Apply styles to navigation links */
 .navitem a {
     position: relative;
-    color: #44fce3;
+    color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -59,21 +66,171 @@
     transition: width 0.3s; /* Add a smooth width transition on hover */
 }
 
-.label {
-    position: absolute;
-    bottom: 0; left: 0;
+/* CSS for small screens (e.g., mobile) */
+@media (max-width: 768px) {
+    /* Hide rightmost menu items and show burger menu icon */
+    body {
+        overflow-x: hidden;
+    }
+    .antialiased{
+        overflow-x: hidden;
+    }
+    .nav .logo{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 60px;
+    }
+    .menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    /* ALL */
+    .hamburger{
+        position: absolute; top: 20px; right: 20px;
+        z-index: 999;
+    }
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background-color: #ecf0f1;
+        display: block;
+        margin: 8px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .hamburger:hover{
+        cursor: pointer;
+    }
+
+    .hamburger.is-active .line:nth-child(1),
+    .hamburger.is-active .line:nth-child(3){
+        width: 30px;
+    }
+
+    .hamburger.is-active .line:nth-child(1){
+        -webkit-transform: translateX(8px) translateY(5px) rotate(45deg);
+        -ms-transform: translateX(8px) translateY(5px) rotate(45deg);
+        -o-transform: translateX(8px) translateY(5px) rotate(45deg);
+        transform: translateX(8px) translateY(5px) rotate(45deg);
+        width: 20px;
+    }
+
+    .hamburger.is-active .line:nth-child(3){
+        -webkit-transform: translateX(8px) translateY(-5px) rotate(-45deg);
+        -ms-transform: translateX(8px) translateY(-5px) rotate(-45deg);
+        -o-transform: translateX(8px) translateY(-5px) rotate(-45deg);
+        transform: translateX(8px) translateY(-5px) rotate(-45deg);
+        width: 20px;
+    }
+
+    /* Style the burger menu icon (you can customize this) */
+    .hamburger.is-active + .burger-menu {
+        display: block;
+        cursor: pointer;
+        position: absolute; right: -230px; top: -310px;
+        display: flex;
+        width: 500px;
+        height: 500px;
+        padding: 15px;
+        background-color: black;
+        border-radius: 50%;
+        align-items: last baseline;
+        animation: fade-in 0.6s ease-in-out;
+    }
+
+    .hamburger.is-active + .burger-menu .burger-menu-navbar{
+        animation: fade-in-menu .8s ease-in-out;
+    }
+
+    .hamburger + .burger-menu .burger-menu-navbar{
+        animation: fade-out-menu .8s ease-in-out;
+    }
+
+    .hamburger + .burger-menu{
+        animation: fade-out 0.6s ease-in-out;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: rotate(360deg);
+            position: absolute; right: -400px;
+        }
+        100% {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(360deg);
+            position: absolute; right: -400px;
+        }
+    }
+
+    @keyframes fade-in-menu {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-out-menu {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .hamburger.is-active + .burger-menu .navitem{
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    .hamburger.is-active + .burger-menu ul li:nth-child(2){
+        margin-left: 20px;
+    }
+    .hamburger.is-active + .burger-menu ul li:nth-child(3){
+        margin-left: 50px;
+    }
+    .hamburger.is-active + .burger-menu ul li:nth-child(4){
+        margin-left: 90px;
+    }
+}
+
+@media (min-width: 768px) {
+    .burger-menu{
+        display: none;
+    }
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1, .hero h2{
     color: white;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-family: "Arial", sans-serif;
-    font-size: 11px;
-    z-index: 999;
-  }
-  
-  .label a{
-    text-decoration: none;
-    color: aqua;
-  }
+}
 
 
 
